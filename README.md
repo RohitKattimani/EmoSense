@@ -5,5 +5,5 @@ Official repository for the project developed by team PENTABYTE during the AIVER
 Rohit Kattimani (https://www.github.com/RohitKattimani)|  <br>
 Yashas P (https://www.github.com/yashasp322-ship-it)<br>
 Pranava G Krishna (https://www.github.com/PGK2007)<br>
-Rathan U C <br>
+Rathan U C <br> (https://github.com/rathangowdauc2508-dotcom)
 Prabhanjan Abhiram R
