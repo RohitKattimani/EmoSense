@@ -1,0 +1,2 @@
+# EmoSense
+Official repository for the project developed by team PENTABYTE during the AIVERSE Hackathon
