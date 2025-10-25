@@ -6,3 +6,5 @@ pillow
 torch
 torchvision
 torchaudio
+websockets
+flask_socketio
