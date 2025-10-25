@@ -33,7 +33,7 @@
     .btn.stop { background: linear-gradient(135deg, #ef4444, #dc2626); }
 
     #video-feed { border-radius: 16px; width: 640px; max-width: 100%; box-shadow: 0 8px 24px rgba(0,0,0,0.4); display:none; margin:auto; }
-    #camera-section { display:flex; flex-direction:column; align-items:center; margin-top:30px; }
+    #camera-section { display:none; flex-direction:column; align-items:center; margin-top:30px; }
 
     #dashboard { position: absolute; top: 20px; right: 20px; background: rgba(0,0,0,0.5); padding: 15px; border-radius: 12px; width: 220px; color: #fff; }
     #dashboard h5 { margin: 0 0 5px 0; font-size: 1rem; }
@@ -150,6 +150,11 @@
     };
 
     function startCamera() {
+      console.log('startCamera called');
+      console.log('isCameraOn:', isCameraOn);
+      console.log('video element:', video);
+      console.log('cameraSection element:', cameraSection);
+      
       if (!isCameraOn) {
         video.src = '/video_feed';
         video.style.display = 'block';
@@ -161,6 +166,7 @@
         document.getElementById('reportSection').style.display = 'none';
         
         startChartAnimation();
+        console.log('Camera started');
       }
     }
 
