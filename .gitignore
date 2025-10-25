@@ -1,0 +1,10 @@
+venv/
+venv2/
+__pycache__/
+*.pyc
+*.pyo
+.env
+*.db
+.DS_Store
+static/uploads/*.jpg
+static/uploads/*.mp4
