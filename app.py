@@ -5,6 +5,8 @@ import os
 import uuid
 import cv2
 from collections import deque, Counter
+import eventlet
+import eventlet.wsgi
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
@@ -283,9 +285,10 @@ def handle_connect():
 def handle_disconnect():
     print('❌ Client disconnected from WebSocket')
 
+
 if __name__ == '__main__':
     import os
     port = int(os.environ.get('PORT', 5000))
     print(f"🚀 Starting EmoSense on port {port}")
-    print("📹 Make sure your webcam is connected!")
+    eventlet.monkey_patch()
     socketio.run(app, host='0.0.0.0', port=port, debug=False)
