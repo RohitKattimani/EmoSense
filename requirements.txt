@@ -8,3 +8,5 @@ torchvision
 torchaudio
 websockets
 flask_socketio
+eventlet
+ultralytics
