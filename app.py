@@ -5,8 +5,6 @@ import os
 import uuid
 import cv2
 from collections import deque, Counter
-import eventlet
-import eventlet.wsgi
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'static/uploads'
@@ -192,7 +190,7 @@ def index():
         video_file = request.files.get('video')
         if video_file and video_file.filename:
             print(f"🎬 Video uploaded, generating analysis...")
-            video_report = generate_default_video_report()
+            video_report = generate_quick_video_report()
             print(f"📊 Analysis complete!")
 
     report = calculate_report()
@@ -285,18 +283,7 @@ def handle_connect():
 def handle_disconnect():
     print('❌ Client disconnected from WebSocket')
 
-
 if __name__ == '__main__':
-    import os
-    port = int(os.environ.get('PORT', 5000))
-    print(f"🚀 Starting EmoSense on port {port}")
+    print("🚀 Starting EmoSense on http://localhost:5000")
     print("📹 Make sure your webcam is connected!")
-
-    # Added allow_unsafe_werkzeug=True for Render compatibility
-    socketio.run(
-        app,
-        host='0.0.0.0',
-        port=port,
-        debug=False,
-        allow_unsafe_werkzeug=True
-    )
+    socketio.run(app, host='0.0.0.0', port=5000, debug=False)
